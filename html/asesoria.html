@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asesoria</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            border: 2px solid #000;
+            background-color: rgb(173, 255, 255);
+            border-radius:20px;
+        }
+    </style>
+</head>
+
+<body onload="load_page">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <button onclick="reload_page()">cargar pagina</button>
+    <div id="box" onmouseover="entry()" onmouseout="exit()"></div>
+
+    <input type="text" id="input_valueOne" placeholder="ingrese un dato">
+    <br>
+    <input type="text" id="input_valueTwo" placeholder="ingrese un dato">
+    <br>
+    <button id="btn_calculate">calcular</button>
+    <script>
+        const btn_calculate = document.querySelector("#btn_calculate");
+        const valueOne = document.querySelector("#input_valueOne");
+        const valueTwo = document.querySelector("#nput_valueTwo");
+        const box = document.querySelector("#box");
+
+        btn_calculate.addEventListener("click",even_name =>{
+            let name = valueOne.value+" "+valueTwo.value;
+            name = name.toUpperCase();
+            alert(name);
+            console.log(name);
+        });
+
+
+
+        function load_page(){ 
+            swal.fire({ 
+                icon: 'success',
+                showConfirmButton : flase,
+                timer: 2000,
+                title: 'bienvenido',
+                text : 'señor usuario'
+            });
+         }
+
+         function reload_page(){ 
+            load_page();
+          }
+
+          function entry(){ 
+            document.body.style.backgroundColor = "#000";
+            box.style.backgroundColor = "#000";
+          }
+
+         function exit(){ 
+            document.body.style.backgroundColor ="fff";
+            
+          }
+
+
+    </script>
+</body>
+</html>

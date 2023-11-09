@@ -25,8 +25,8 @@ console.log(true);
 //pantalla - body
 // get es capturar
 document.write(name);
-document.getElementById("box_one").innerHTML = "<h1> valentina prado </h1>";
-document.getElementById("box_two").innerText= "<h1>valentina prado</h1>";
+//  document.getElementById("box_one").innerHTML = "<h1> valentina prado </h1>";
+// document.getElementById("box_two").innerText= "<h1>valentina prado</h1>";
 
 //librerias
  
@@ -107,5 +107,109 @@ Swal.fire({
     icon :'success',
     title : 'respuesta',
     html : respuesta,
+});
+
+// ·················operadores logicos y estructuras condicionales(inverse,)·············
+// and y con if
+var bool = true;
+var numeric = 7;
+//!= contraroio,negacion,o inverso= se le da inverso a la respuesta si es verdadero pasa a falso,y si es falso pasa a verdadero
+// = asignacion del valor,== igual de la comparacion,compara el valor,=== compara valor y tipo de dato
+if(!bool && numeric === 7){ //bool==true
+    console.log("entra if")
+}
+else{
+    console.log("entra else")
+}
+
+// or | | con if
+// el or es si uno de los dos valores son verdaderos entonces entra al if,pero si ninguno de los dos es verdadero entonces entra al else
+var age = 31;
+if(age==32  || numeric===7 ){ 
+    console.log("entra if")
+    age+=2;
+}
+else{
+    console.log("entra else")
+    age--;
+}
+console.log(age);
+
+// for 
+console.log(array_tex.length);
+for(let i=0;i<array_tex.length;i++){ 
+    console.log(array_tex[i]+(i+1));
+}
+
+// WHILE
+let position = 0; 
+while (position < array_tex.length) {
+    console.log(array_tex[position]+" "+(position+1));
+    position++;
+}
+
+// DO WHILE 
+let w = 0;
+do {
+    console.log(array_tex[w]+" "+(w+1));
+    w++;
+} while (w < array_tex.length);
+
+//eventos y funciones{}
+//pagina 100 productos,estan catagorizados 20 zapatos,20 zapatos, si muestra imagenes mas zapatos que antes que otros
+
+function load_page(){
+    // ejm();
+    // ejm2();
+}
+function ejm(){
+    alert("bienvenido 1")
+}
+function ejm2(){
+    alert("bienvenido 2")
+}
+function box_onblur(){
+    const box_onblur = document.querySelector("#box_onblur");
+    if(box_onblur.ariaValueMax.length<=2){
+        alert("prblemas con el texto");
+    }
+}
+const btn_chanceColor = document.querySelector("#chance_color");
+btn_chanceColor.addEventListener("click",() => {
+    document.body.style.backgroundColor = "red";
+    document.body.style.color = "#fff";
 
 });
+ const form = document.querySelector("form_register");
+ const nombres = document.querySelector("nombres");
+ const apellidos = document.querySelector("apellidos");
+ const validation = document.querySelector("validationr");
+// submir solo para formularios
+//  form.addEventListener("submit",name_event =>{
+
+//  });
+ function load_page(){
+    //focues pone el puntero en el nombres
+    //
+    document.getElementById("nombres").focus();
+    document.getElementById("apellidos").disabled= true;
+    let date = new Date;
+    console.log(date.getMonth());
+    for(let i=0;i<array_mul.length;i++){
+        console.log(array_mul[i].name);
+
+    }
+ }
+ //funcion validar
+ function validate(){
+    let nombres = document.getElementById("nombres").value;
+    console.log(nombres);
+    //lastIndexOf ("e")= encontrar valores de izquierda a derecha
+    alert(nombres.concat("Prados"))
+    if(nombres.length>2){
+        document.getElementById("apellidos").disabled= false;
+        document.getElementById("apellidos").focus();
+        document.getElementById("nombres").value=" ";
+    }
+ }
+
